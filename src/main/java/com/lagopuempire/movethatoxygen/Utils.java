@@ -22,7 +22,7 @@ public class Utils {
 
 	public static Set<Molecule> generateAmbientMolecules() throws IOException {
 		Random random = new Random();
-		Set<Molecule> molecules = new HashSet<Molecule>();
+		Set<Molecule> molecules = new HashSet<>();
 		for(int ii = 0; ii < 3; ii++) {
 			StandardMolecule molecule = new StandardMolecule(Atom.HYDROGEN, random.nextInt(900), random.nextInt(900));
 	//		molecule.setSpeed(0.1);

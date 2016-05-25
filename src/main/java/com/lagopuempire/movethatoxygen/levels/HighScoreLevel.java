@@ -20,17 +20,17 @@ public class HighScoreLevel implements Level, KeyListener {
 	private int tickCounter = 0;
 	
 	private int cursorX = 10;
-	private int cursorY = 100;
+	private final int cursorY = 100;
 	private final int cursorWidth = 20;
 	private final int cursorHeight = 30;
 	
 	private boolean cursorSolid = false;
 	private Entry currentEntry;
 	
-	private List<Entry> entries;
+	private final List<Entry> entries;
 	
 	public HighScoreLevel() {
-		entries = new ArrayList<Entry>();
+		entries = new ArrayList<>();
 		entries.add(new Entry(100));
 		currentEntry = entries.get(0);
 	}
@@ -66,11 +66,7 @@ public class HighScoreLevel implements Level, KeyListener {
 	public void tick() {
 		if(tickCounter == TICKS_PER_CURSOR_PULSE) {
 			tickCounter = 0;
-			if(cursorSolid == true) {
-				cursorSolid = false;
-			} else {
-				cursorSolid = true;
-			}
+                        cursorSolid = cursorSolid != true;
 		} else {
 			tickCounter++;
 		}
@@ -123,12 +119,12 @@ public class HighScoreLevel implements Level, KeyListener {
 	class Entry {
 		public Entry(int column) {
 			this.column = column;
-			chars = new ArrayList<Character>();
+			chars = new ArrayList<>();
 			
 		}
 		
 		private final int column;
-		private List<Character> chars;
+		private final List<Character> chars;
 		private int cursorX;
 		private int cursorY;
 		

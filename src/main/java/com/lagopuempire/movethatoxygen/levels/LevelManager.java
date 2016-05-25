@@ -20,7 +20,7 @@ public class LevelManager implements Drawable {
 	
 	private LevelManager() {
 		Environment.getInstance().addDrawable(this);
-		levels = new HashMap<String, Level>();
+		levels = new HashMap<>();
 		//TODO: seperate game engine
 		levels.put("MenuLevel", new MenuLevel());
 		levels.put("HydrogenLevel", new HydrogenLevel());
@@ -35,7 +35,7 @@ public class LevelManager implements Drawable {
 		Environment.getInstance().setCurrentLevel(currentLevel);
 	}
 	
-	private Map<String, Level> levels;
+	private final Map<String, Level> levels;
 	private Level currentLevel;
 	
 	@Override

@@ -16,7 +16,7 @@ public abstract class ClickableButton extends MouseAdapter implements Drawable {
 
 	protected int x;
 	protected int y;
-	private ButtonPressEvent event;
+	private final ButtonPressEvent event;
 	private boolean listenForClicks = true;
 	protected boolean isClicked = false;
 	

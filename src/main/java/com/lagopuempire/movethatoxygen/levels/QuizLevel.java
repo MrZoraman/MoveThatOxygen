@@ -23,17 +23,17 @@ import java.util.Set;
 public class QuizLevel implements Level, KeyListener {
 	
 	public QuizLevel() {
-		buttons = new HashSet<RectangleButton>();
+		buttons = new HashSet<>();
 		for(int ii = 0; ii < messages.length; ii++) {
 			messages[ii] = "";
 		}
-		molecules = new HashSet<Molecule>();
+		molecules = new HashSet<>();
 	}
 	
 	private Molecule controlMolecule = null;
 	private Set<Molecule> molecules = null;
 	
-	private Set<RectangleButton> buttons;
+	private final Set<RectangleButton> buttons;
 	
 	public void addMolecule(Molecule molecule) {
 		molecules.add(molecule);
@@ -98,7 +98,7 @@ public class QuizLevel implements Level, KeyListener {
 	}
 	
 	private LevelState state = LevelState.BOND_SHAPE;
-	private String[] messages = new String[7];
+	private final String[] messages = new String[7];
 	private boolean canScore = true;
 	
 	/*

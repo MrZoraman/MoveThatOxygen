@@ -64,8 +64,8 @@ public abstract class Molecule implements Drawable
 			break;
 		}
 		
-		attatchedMolecules = new HashSet<Molecule>();
-		adjacentMolecules = new HashSet<Molecule>();
+		attatchedMolecules = new HashSet<>();
+		adjacentMolecules = new HashSet<>();
 		
 		
 		//get blurred image
@@ -82,7 +82,7 @@ public abstract class Molecule implements Drawable
 				num, num, num
 		};
 		
-		Map<Key, Object> map = new HashMap<Key, Object>();
+		Map<Key, Object> map = new HashMap<>();
 		map.put(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 		map.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
 		map.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -102,7 +102,7 @@ public abstract class Molecule implements Drawable
 	private int speed = 6;
 	private BufferedImage img, blur, dark = null;
 	private String name = "not named";
-	private Set<Molecule> attatchedMolecules, adjacentMolecules;
+	private final Set<Molecule> attatchedMolecules, adjacentMolecules;
 	private int xOffset, yOffset;
 	private boolean independentMovement = true;
 	private Molecule controlMolecule = null;
@@ -114,7 +114,7 @@ public abstract class Molecule implements Drawable
 	private boolean showBlured = false;
 	private boolean showDarkened = false;
 	
-	private MoleculeSignature sig;
+	private final MoleculeSignature sig;
 	
 	public void attatchMolecule(Molecule molecule) {
 		if(openConnections != 0 || molecule.hasBonded) {

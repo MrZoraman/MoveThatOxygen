@@ -50,12 +50,12 @@ public class Environment extends JPanel implements ActionListener
 		return instance;
 	}
 	
-	private Timer timer;
-	private List<Molecule> molecules;
-	private List<ControllableMolecule> players;
+	private final Timer timer;
+	private final List<Molecule> molecules;
+	private final List<ControllableMolecule> players;
 	private String statusString = "";
 	//private String exitString = "Press ENTER to reset";
-	private Set<Drawable> drawables;
+	private final Set<Drawable> drawables;
 	private int score;
 	
 	private Level currentLevel;

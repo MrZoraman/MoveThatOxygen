@@ -11,8 +11,8 @@ import java.util.Set;
 
 public class MoleculeSignature {
 	
-	private static Set<Atom> knownAtoms;
-	private static Set<MoleculeSignature> signatures;
+	private static final Set<Atom> knownAtoms;
+	private static final Set<MoleculeSignature> signatures;
 	private static MoleculeSignature playerSignature;
 	
 	public MoleculeSignature() {
@@ -22,7 +22,7 @@ public class MoleculeSignature {
 		}
 	}
 	
-	private Map<Atom, Integer> amountOfAtoms;
+	private final Map<Atom, Integer> amountOfAtoms;
 	private String identifier = "";
 	private BondPolarity bondPolarity;
 	private BondShape bondShape;
@@ -147,8 +147,8 @@ public class MoleculeSignature {
 	}
 
 	static {
-		knownAtoms = new HashSet<Atom>();
-		signatures = new HashSet<MoleculeSignature>();
+		knownAtoms = new HashSet<>();
+		signatures = new HashSet<>();
 		playerSignature = new MoleculeSignature();
 		
 		MoleculeSignature sig = new MoleculeSignature();

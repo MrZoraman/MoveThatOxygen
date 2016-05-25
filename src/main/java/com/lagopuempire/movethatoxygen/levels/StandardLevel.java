@@ -135,33 +135,39 @@ public class StandardLevel implements Level, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		if(arg0.getKeyCode() == KeyEvent.VK_ENTER){
-			StandardMolecule mol = StandardMolecule.fromMolecule(Environment.getInstance().getPlayers().get(0));
-			if(isValidMolecule) {
-				LevelManager.getInstance().setCurrentLevel("QuizLevel");
-				QuizLevel lev = ((QuizLevel) LevelManager.getInstance().getCurrentLevel());
-				Random random = new Random();
-				mol.setVelocityX(random.nextInt(2) == 0 ? 1 : -1);
-				mol.setVelocityY(random.nextInt(2) == 0 ? 1 : -1);
-				mol.setShowDarkened(true);
-				mol.setRotationRate(0.0);
-				lev.setControlMolecule(mol);
-				for(Molecule molecule : mol.getAttatchedMolecules()) {
-					molecule.setShowDarkened(true);
-	//				System.out.println("level adding molecules");
-					molecule.setRotationRate(0.0);
-					lev.addMolecule(molecule);
-				}
-				lev.moveMolecules(600, 400);
-			} else {
-				invalidAttempt = true;
-			}
-		} else if (arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-			LevelManager.getInstance().setCurrentLevel("MenuLevel");
-			Environment.getInstance().setStatusString("");
-		} else if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-			LevelManager.getInstance().setCurrentLevel("StandardLevel");
-		}
+            switch (arg0.getKeyCode()) {
+                case KeyEvent.VK_ENTER:
+                    StandardMolecule mol = StandardMolecule.fromMolecule(Environment.getInstance().getPlayers().get(0));
+                    if(isValidMolecule) {
+                        LevelManager.getInstance().setCurrentLevel("QuizLevel");
+                        QuizLevel lev = ((QuizLevel) LevelManager.getInstance().getCurrentLevel());
+                        Random random = new Random();
+                        mol.setVelocityX(random.nextInt(2) == 0 ? 1 : -1);
+                        mol.setVelocityY(random.nextInt(2) == 0 ? 1 : -1);
+                        mol.setShowDarkened(true);
+                        mol.setRotationRate(0.0);
+                        lev.setControlMolecule(mol);
+                        for(Molecule molecule : mol.getAttatchedMolecules()) {
+                            molecule.setShowDarkened(true);
+                            //				System.out.println("level adding molecules");
+                            molecule.setRotationRate(0.0);
+                            lev.addMolecule(molecule);
+                        }
+                        lev.moveMolecules(600, 400);
+                    } else {
+                        invalidAttempt = true;
+                    }
+                    break;
+                case KeyEvent.VK_BACK_SPACE:
+                    LevelManager.getInstance().setCurrentLevel("MenuLevel");
+                    Environment.getInstance().setStatusString("");
+                    break;
+                case KeyEvent.VK_SPACE:
+                    LevelManager.getInstance().setCurrentLevel("StandardLevel");
+                    break;
+                default:
+                    break;
+            }
 	}
 
 	@Override

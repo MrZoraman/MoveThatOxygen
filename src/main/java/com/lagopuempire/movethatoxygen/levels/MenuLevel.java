@@ -23,11 +23,11 @@ public class MenuLevel implements Level {
 		try {
 			ambientMolecules = Utils.generateAmbientMolecules();
 		} catch (IOException e) {
-			ambientMolecules = new HashSet<Molecule>();
+			ambientMolecules = new HashSet<>();
 		}
 		
 
-		buttons = new HashSet<ClickableButton>();
+		buttons = new HashSet<>();
 	}
 	
 	private ClickableButton carbonButton;

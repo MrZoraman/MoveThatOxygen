@@ -38,7 +38,7 @@ public class StandardMolecule extends Molecule
 		}
 	}
 	
-	private Random random;
+	private final Random random;
 	
 	private int velocityX, velocityY = 0;
 	

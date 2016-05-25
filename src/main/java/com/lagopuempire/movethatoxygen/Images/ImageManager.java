@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 public class ImageManager {
 	private ImageManager() {
-		images = new HashMap<String, BufferedImage>();
+		images = new HashMap<>();
 	}
 	
 	private static ImageManager instance = null;
@@ -20,13 +20,13 @@ public class ImageManager {
 		return instance;
 	}
 	
-	private Map<String, BufferedImage> images;
+	private final Map<String, BufferedImage> images;
 	
 	private BufferedImage getImageInternal(String imageName) {
 		if(images.containsKey(imageName)) {
 			return images.get(imageName);
 		} else {
-			BufferedImage image = null;;
+			BufferedImage image = null;
 			try {
 				image = ImageIO.read(getClass().getResource(imageName + ".png"));
 			} catch (IOException e) {
