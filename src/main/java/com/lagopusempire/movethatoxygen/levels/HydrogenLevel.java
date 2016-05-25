@@ -74,7 +74,7 @@ public class HydrogenLevel implements Level, KeyListener {
                             }
 
                             if (canPlace) {
-                                Environment.getInstance().addMolecule(new StandardMolecule(Atom.HYDROGEN, random.nextInt(900), random.nextInt(900)));
+                                Environment.getInstance().addMolecule(new StandardMolecule(Atom.HYDROGEN, x, y));
                                 hydrogens++;
                                 counter = 0;
                                 moleculePlaced = true;
