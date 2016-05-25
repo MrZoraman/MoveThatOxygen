@@ -58,7 +58,7 @@ public class MenuLevel implements Level {
         g2d.drawString("Press ESCAPE to exit anytime", 685, 25);
 
         g2d.setColor(Color.GRAY);
-        g2d.drawString("Version 1.0.0", 800, 870);
+        g2d.drawString("Version 1.1.1", 800, 870);
     }
 
     @Override
