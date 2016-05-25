@@ -58,7 +58,6 @@ public class MenuLevel implements Level {
         g2d.drawString("Press ESCAPE to exit anytime", 685, 25);
 
         g2d.setColor(Color.GRAY);
-        //g2d.drawString("ChemGame by Matt Sessa with help from Ben Yamamoto.", 5, 870);
         g2d.drawString("Version 1.0.0", 800, 870);
     }
 
