@@ -1,7 +1,9 @@
 package com.lagopuempire.movethatoxygen.Images;
 
+import com.lagopuempire.movethatoxygen.Main;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +30,9 @@ public class ImageManager {
 		} else {
 			BufferedImage image = null;
 			try {
-				image = ImageIO.read(getClass().getResource(imageName + ".png"));
+                            String str = imageName + ".png";
+                            URL url = getClass().getResource(str);
+				image = ImageIO.read(url);
 			} catch (IOException e) {
 				System.out.println("Image not found: " + imageName);
 			} finally {
